@@ -1,0 +1,192 @@
+/* Basic body styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #253745;
+    color: #f2f2f2; /* Ensures text is readable against the dark background */
+}
+
+/* Main container using flexbox */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Top navigation styles */
+.topnav {
+    display: flex;
+    justify-content: center; /* Center the navigation links */
+    background-color: #06141B;
+    padding: 10px;
+}
+
+.topnav a {
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    flex: 1; /* Allow links to grow and fill the container */
+    text-align: center; /* Center the text within the link */
+    display: flex; /* Ensure links are flex items */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+}
+
+.topnav a:hover {
+    background-color: #FFC0CB;
+    color: black;
+}
+
+.topnav a.active {
+    color: white;
+}
+
+/* Header styles */
+.Header {
+    background-color: #11212D;
+    padding: 20px;
+    text-align: center;
+    color: #ddd;
+}
+
+.Header h1 {
+    margin: 0;
+}
+
+/* Footer styles */
+footer {
+    background-color: #06141B;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Profile image styling */
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px; /* Adds spacing between image and text */
+}
+
+/* Intro section styling */
+.intro {
+    display: flex;
+    flex: 1 1 100%; /* Flex item takes full width */
+    align-items: center;
+    background-color: #fff;
+    color: #253745; /* Text color adjusted for better readability */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: row; /* Default direction */
+}
+
+.text-container {
+    margin-left: 20px;
+}
+
+/* Content sections styling */
+.edukasi, .skills-and-interests, .video-gallery, .Gallery {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #253745; /* Ensures text color is consistent */
+    flex: 1 1 calc(50% - 20px); /* Flex items take half width minus gap */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+.video-gallery, .Gallery {
+    flex: 1 1 100%; /* Flex items take full width */
+}
+
+/* Photo gallery styling */
+.Gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.Gallery img {
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+}
+
+@media only screen and (max-width: 768px) {
+    .Gallery img {
+        width: calc(50% - 10px); /* Two images per row on smaller screens */
+    }
+}
+
+/* Contact section styling */
+.Contact {
+    text-align: center;
+    flex: 1 1 100%; /* Flex item takes full width */
+    padding: 20px;
+    background-color: #fff;
+    color: #253745;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Contact a {
+    margin: 0 10px;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #253745;
+    color: #fff;
+}
+
+td {
+    text-align: center;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .intro {
+        flex-direction: column; /* Stacks image and text vertically */
+    }
+
+    .text-container {
+        margin-left: 0;
+        margin-top: 20px;
+        text-align: center; /* Center the text on small screens */
+    }
+
+    .edukasi, .skills-and-interests, .video-gallery, .Gallery, .Contact {
+        flex: 1 1 100%; /* Each section spans full width */
+    }
+
+    .Gallery img {
+        width: calc(50% - 10px); /* Two images per row on smaller screens */
+    }
+}

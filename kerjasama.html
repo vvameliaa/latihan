@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Kerjasama</title>
+    <link rel="stylesheet" href="style2.css">
+    <script>
+        function validateForm() {
+            var nama = document.getElementById("nama").value;
+            var alamat = document.getElementById("almt").value;
+            var no_wa = document.getElementById("no_wa").value;
+            var email = document.getElementById("email").value;
+            var jenis_kelamin = document.querySelector('input[name="jenis_kelamin"]:checked');
+            var bidang_kerjasama = document.querySelector('input[name="bk1"]:checked') || 
+                                   document.querySelector('input[name="bk2"]:checked') || 
+                                   document.querySelector('input[name="bk3"]:checked');
+            var file_penawaran = document.getElementById("file_penawaran").value;
+            var tanggal_pelaksanaan = document.getElementById("tanggal_pelaksanaan").value;
+            var domisili = document.getElementById("domisili").value;
+
+            if (nama == "" || alamat == "" || no_wa == "" || email == "" || !jenis_kelamin || !bidang_kerjasama || file_penawaran == "" || tanggal_pelaksanaan == "" || domisili == "pilih") {
+                alert("Semua bidang wajib diisi!");
+                return false;
+            }
+
+            if (!/^\d{10,13}$/.test(no_wa)) {
+                alert("Nomor WA tidak valid! Harus berupa angka 10-13 digit.");
+                return false;
+            }
+
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Email tidak valid!");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <!-- Navigasi Bar -->
+    <div class="topnav">
+        <a href="index.html"><b>Home</b></a>
+        <a href="kerjasama.html"><b>Kerjasama</b></a>
+    </div>
+    
+    <div class="container">
+        <div class="section formulir">
+            <h2>Formulir Penawaran Kerjasama</h2>
+
+            <form onsubmit="return validateForm()">
+                <table>
+                    <tr>
+                        <td><label for="nama"><b>Nama</b></label></td>
+                        <td><input type="text" id="nama" name="nama"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="almt"><b>Alamat</b></label></td>
+                        <td><textarea name="alamat" id="almt"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="no_wa"><b>No. WA</b></label></td>
+                        <td><input type="text" id="no_wa" name="no_wa"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email"><b>Email</b></label></td>
+                        <td><input type="email" id="email" name="email"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="jenis_kelamin"><b>Jenis Kelamin</b></label></td>
+                        <td>
+                            <div class="radio-group">
+                                <input type="radio" id="laki_laki" name="jenis_kelamin" value="Laki-Laki"> Laki-Laki
+                                <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan"> Perempuan
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Bidang Kerjasama</b></td>
+                        <td>
+                            <div class="checkbox-group">
+                                <input type="checkbox" name="bk1" value="mm"> Multimedia
+                                <input type="checkbox" name="bk2" value="pemrograman"> Pemrograman
+                                <input type="checkbox" name="bk3" value="fintech"> Fintech
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="file_penawaran"><b>File Penawaran</b></label></td>
+                        <td><input type="file" id="file_penawaran" name="file_penawaran" accept="application/pdf"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="tanggal_pelaksanaan"><b>Tanggal Pelaksanaan</b></label></td>
+                        <td><input type="date" id="tanggal_pelaksanaan" name="tanggal_pelaksanaan"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="domisili"><b>Domisili</b></label></td>
+                        <td>
+                            <select id="domisili" name="domisili">
+                                <option value="pilih" selected>---PILIH DOMISILI---</option>
+                                <option value="jakarta">Jakarta</option>
+                                <option value="yogyakarta">Yogyakarta</option>
+                                <option value="bandung">Bandung</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="Submit">
+                            <input type="reset" value="Reset">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+  
+    <footer>
+        <h3>Contact Me</h3>
+        <a href="https://wa.me/+62895331240514" target="_blank">
+            <img src="wa.jpg" alt="WhatsApp" style="width: 50px; height: 50px;">
+        </a>
+        <a href="https://www.instagram.com/itsphew?igsh=MW53Z20zODE0YzNhMA==" target="_blank">
+            <img src="instagram.jpg" alt="Instagram" style="width: 50px; height: 50px;">
+        </a>
+        <a href="https://youtube.com/@hello_itsphew?si=KAoOKcgQSFi7JEDC" target="_blank">
+            <img src="youtube.jpg" alt="YouTube" style="width: 50px; height: 50px;">
+        </a>
+        <a href="https://www.tiktok.com/@hello_itsphew?_t=8mN0a9Jbx0y&_r=1" target="_blank">
+            <img src="tiktok.jpg" alt="TikTok" style="width: 50px; height: 50px;">
+        </a>
+        <a href="mailto:viviamelia@students.amikom.ac.id" target="_blank">
+            <img src="gmail.jpg" alt="Email" style="width: 50px; height: 50px;">
+        </a>
+        <a href="https://www.linkedin.com/in/vivi-amelia-892308211" target="_blank">
+            <img src="linkedin.jpg" alt="LinkedIn" style="width: 50px; height: 50px;">
+        </a>
+        <h2>#OneDayWithMe</h2>
+    </footer>
+</body>
+</html>
